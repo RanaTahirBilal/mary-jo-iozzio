@@ -1,0 +1,202 @@
+/* =====================================================================
+   Mary Jo Iozzio site. Loaded after the MegaOne resume demo stylesheet.
+   Prefix: mj-
+   Every override of a demo rule says why.
+   ===================================================================== */
+
+:root{
+  --mj-ink:#1F1A1C;        /* 17.17 on white, 15.55 on cream */
+  --mj-muted:#5E5358;      /*  7.36 on white,  6.66 on cream */
+  --mj-paper:#FFFFFF;
+  --mj-cream:#F7F3EE;
+  --mj-dark:#241D20;       /* band and footer ground */
+  --mj-acc:#8A2E3B;        /* rules, icons and 24px+ figures only; 8.29 on white */
+  --mj-acc-ink:#7A2533;    /*  9.81 on white, small text and button ground on light */
+  --mj-acc-lift:#E7A3AE;   /*  8.06 on dark, small text on dark */
+  --mj-gold-lift:#D9B770;  /*  8.62 on dark, figures on dark */
+  --mj-on-dark:#EFE8E1;    /* 14.2 on dark */
+  --mj-serif:'Libre Caslon Text', Georgia, 'Times New Roman', serif;
+  --mj-sans:'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Base type: the demo sets Roboto 300 and Poppins; replaced with an editorial pairing */
+body{font-family:var(--mj-sans);font-weight:400;font-size:17px;line-height:1.65;color:var(--mj-ink);background:var(--mj-paper);}
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:var(--mj-serif);font-weight:400;color:var(--mj-ink);}
+a{color:var(--mj-acc-ink);}
+a:hover,a:focus,a:active{color:var(--mj-ink);}
+.paragraph{color:var(--mj-ink);}
+.mj-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+
+/* Preloader and scroll arrow carried demo blue and cyan */
+.preloader{background:var(--mj-cream);}
+.preloader .double-bounce1,.preloader .double-bounce2{background-color:var(--mj-acc)!important;}
+.scroll-top-arrow,.scroll-top-arrow:focus,.scroll-top-arrow:hover{background-color:var(--mj-acc-ink);color:#fff;}
+
+/* ---------- Navigation ----------
+   The demo nav is absolute and transparent over the hero. The top right of the hero
+   photograph is a dark board, so dark links would vanish there. The bar is made fixed
+   and solid from the start. */
+.navbar-top-default{position:fixed;top:0;left:0;right:0;height:76px;background:rgba(247,243,238,.97);box-shadow:0 1px 0 rgba(31,26,28,.08);overflow:visible;}
+.header-appear .navbar-top-default{height:76px;background:rgba(247,243,238,.98);animation:none;}
+.mj-wordmark{font-family:var(--mj-serif);font-size:1.35rem;color:var(--mj-ink)!important;letter-spacing:.2px;text-decoration:none!important;white-space:nowrap;}
+.navbar-simple .navbar-nav .nav-link{color:var(--mj-ink);font-family:var(--mj-sans);font-weight:600;font-size:15px;padding:.4rem .9rem;}
+.navbar-simple .navbar-nav .nav-link:hover,.navbar-simple .navbar-nav .nav-link.active{color:var(--mj-acc-ink);}
+/* Demo underline sat 28px below the link in demo blue */
+.nav-line .navbar-nav .nav-link:before{background-color:var(--mj-acc);bottom:-24px;}
+.sidemenu_btn{top:50%;transform:translateY(-50%);}
+.sidemenu_btn span{background:var(--mj-ink);}
+@media (min-width:992px){ .sidemenu_btn{display:none;} }
+
+/* Side menu: demo blue ground replaced with the dark ground */
+.side-menu{background:var(--mj-dark);}
+.side-nav .navbar-nav .nav-link{color:var(--mj-on-dark);font-family:var(--mj-serif);}
+.side-nav .navbar-nav .nav-link::after{background:var(--mj-acc-lift);}
+.side-menu .mj-side-note{color:var(--mj-on-dark);font-size:15px;line-height:1.5;}
+@media (max-width:767px){ .side-menu{width:100%;} .side-menu .inner-wrapper{padding:3.5rem 2rem;} }
+
+/* ---------- Hero ----------
+   The demo hero is a flex row on a patterned ground with a portrait card on the right.
+   Here the 16:9 photograph is the ground; she stands in its right third and the
+   headline sits on the quiet left half. */
+.home-banner.mj-hero{
+  display:block;                     /* demo flex shrank the container to content width */
+  min-height:100vh;padding:150px 0 90px;
+  background-color:var(--mj-cream);
+  background-image:
+    linear-gradient(90deg,rgba(247,243,238,.94) 0%,rgba(247,243,238,.86) 38%,rgba(247,243,238,0) 58%),
+    url("../img/hero.jpg");
+  background-size:cover;background-position:right center;background-repeat:no-repeat;
+  position:relative;
+}
+.home-banner.mj-hero:after{display:none;}   /* demo dot pattern over the right 30% */
+.mj-hero .container{position:relative;z-index:2;}
+.mj-hero-box{padding-top:4vh;}
+.mj-eyebrow{font-family:var(--mj-sans);font-weight:700;font-size:14px;letter-spacing:1.6px;text-transform:uppercase;color:var(--mj-acc-ink);margin-bottom:1.1rem;}
+.mj-hero-name{font-family:var(--mj-serif);font-size:4rem;line-height:1.05;margin:0 0 1.4rem;color:var(--mj-ink);}
+.mj-postnom{display:block;font-size:1.35rem;letter-spacing:2px;color:var(--mj-muted);margin-top:.7rem;font-family:var(--mj-sans);font-weight:600;}
+.mj-hero-lede{font-size:1.2rem;line-height:1.6;color:var(--mj-ink);max-width:34rem;margin-bottom:2rem;}
+
+/* Buttons: demo .btn is position:sticky with demo blue */
+.btn{position:relative;font-family:var(--mj-sans);font-weight:700;letter-spacing:.3px;}
+.mj-btn{background:var(--mj-acc-ink);border:2px solid var(--mj-acc-ink);color:#fff!important;margin:0 .5rem .6rem 0;}
+.mj-btn:hover,.mj-btn:focus{background:var(--mj-ink)!important;border-color:var(--mj-ink);color:#fff!important;}
+.mj-btn-line{background:transparent;border:2px solid var(--mj-ink);color:var(--mj-ink)!important;margin:0 .5rem .6rem 0;}
+.mj-btn-line:hover,.mj-btn-line:focus{background:var(--mj-ink)!important;color:#fff!important;}
+.btn.btn-large{font-size:15px;padding:11px 30px;}
+
+@media (max-width:991px){
+  /* On narrow screens a cover crop would put the headline on her face.
+     The photograph becomes a block above the text instead. */
+  .home-banner.mj-hero{background-image:none;padding:76px 0 60px;min-height:0;}
+  .home-banner.mj-hero:before{content:"";display:block;height:56vw;max-height:520px;background:url("../img/hero.jpg") 78% center/cover no-repeat;margin-bottom:2.2rem;}
+  .mj-hero-box{padding-top:0;}
+  .mj-hero-name{font-size:2.8rem;}
+}
+
+/* ---------- Section rhythm ---------- */
+section{padding:6.5rem 0;}
+.heading-area .title{font-size:2.6rem;line-height:1.15;margin-bottom:1.4rem;}
+.mj-kicker{font-family:var(--mj-sans);font-weight:700!important;font-size:14px;letter-spacing:1.6px;text-transform:uppercase;color:var(--mj-acc-ink)!important;margin-bottom:.8rem!important;}
+.mj-kicker:after{content:"";display:block;width:44px;height:2px;background:var(--mj-acc);margin-top:.7rem;}
+.text-center .mj-kicker:after{margin-left:auto;margin-right:auto;}
+@media (max-width:767px){ section{padding:4.5rem 0;} .heading-area .title{font-size:2rem;} }
+
+/* ---------- About ---------- */
+#about{background:var(--mj-paper);}
+.dot-box:after{left:-20px;top:auto;bottom:-40px;opacity:.5;}  /* demo placed the dot square behind the text */
+.mj-portrait{position:relative;margin:0 auto 2.5rem;max-width:440px;}
+.mj-portrait:before{content:"";position:absolute;top:22px;left:22px;right:-22px;bottom:-22px;border:2px solid var(--mj-acc);z-index:0;}
+.mj-portrait img{position:relative;z-index:1;width:100%;height:auto;display:block;}
+.mj-focus{margin-top:1rem;}
+.feature-item{margin:0 0 1.2rem;padding:26px 22px;box-shadow:0 0 0 1px rgba(31,26,28,.1);border-radius:6px;height:calc(100% - 1.2rem);}
+.feature-item:nth-child(2){margin-top:0;}   /* demo staggered the second card */
+.feature-item > i.f-icon{background-color:var(--mj-acc-ink);color:#fff;font-size:24px;height:50px;width:50px;line-height:50px;}
+.feature-item .title{font-family:var(--mj-serif);font-size:1.25rem;margin:1.1rem 0 .5rem;}
+.feature-item p{font-size:16px;color:var(--mj-ink);margin:0;}
+
+/* ---------- Figures band ----------
+   Demo used a parallax photograph with white text. A flat dark ground keeps every
+   figure measurable. */
+.parallax.mj-band{background:var(--mj-dark);padding:4.5rem 0;}
+.mj-band .parallax-box{padding:1.6rem .5rem;}
+.mj-fig{font-family:var(--mj-serif);font-size:2.4rem;line-height:1.1;color:var(--mj-gold-lift);margin:0 0 .6rem;}
+.mj-fig-label{font-size:16px;line-height:1.45;color:var(--mj-on-dark);margin:0;}
+
+/* ---------- Career ---------- */
+#career{background:var(--mj-cream);}
+.mj-list-head{font-family:var(--mj-serif);font-size:1.35rem;margin:2.2rem 0 .9rem;color:var(--mj-ink);}
+.mj-timeline{list-style:none;padding:0;margin:0;border-top:1px solid rgba(31,26,28,.14);}
+.mj-timeline li{display:flex;gap:1.2rem;padding:.8rem 0;border-bottom:1px solid rgba(31,26,28,.14);}
+.mj-when{flex:0 0 8.5rem;font-weight:700;font-size:15px;color:var(--mj-acc-ink);padding-top:1px;}
+.mj-what{flex:1;font-size:16px;color:var(--mj-ink);}
+@media (max-width:575px){ .mj-timeline li{flex-direction:column;gap:.15rem;} .mj-when{flex:none;} }
+
+/* Demo .services-about: fixed 550px height, absolute blue card. Made to flow. */
+.services-about.mj-career-fig{height:auto;background-image:none!important;padding:0;margin-top:3rem;position:relative;}
+.services-about.mj-career-fig .service-image{float:none;display:block;max-width:none;width:82%;height:auto;margin-left:auto;}
+.services-about.mj-career-fig .content{position:relative;left:0;bottom:0;margin-top:-7rem;max-width:30rem;background:var(--mj-dark);padding:2.2rem 2.4rem;}
+.services-about.mj-career-fig .content:before{display:none;}   /* demo giant quote glyph */
+.mj-card-kicker{font-weight:700;font-size:14px;letter-spacing:1.6px;text-transform:uppercase;color:var(--mj-acc-lift);margin:0 0 .7rem;}
+.mj-card-text{font-family:var(--mj-serif);font-size:1.3rem;line-height:1.5;color:var(--mj-on-dark);margin:0;}
+@media (min-width:992px){ .services-about.mj-career-fig{position:sticky;top:110px;margin-top:5rem;} }
+@media (max-width:575px){ .services-about.mj-career-fig .service-image{width:100%;} .services-about.mj-career-fig .content{margin-top:-2rem;margin-right:1rem;} }
+
+/* ---------- Books ---------- */
+.mj-books{background:var(--mj-paper);}
+.client-box.mj-book{margin:0 0 1.6rem;padding:1.8rem 1.6rem 1.6rem;border-radius:0;box-shadow:none;border:1px solid rgba(31,26,28,.14);border-top:3px solid var(--mj-acc);height:calc(100% - 1.6rem);background:#fff;}
+.mj-book-meta{font-size:14px;font-weight:700;letter-spacing:.4px;color:var(--mj-muted);margin:0 0 .6rem;}
+.mj-book-title{font-family:var(--mj-serif);font-size:1.2rem;line-height:1.4;margin:0 0 .7rem;color:var(--mj-ink);}
+.mj-book-role{font-size:15px;color:var(--mj-acc-ink);margin:0;font-weight:600;}
+.mj-editorial{max-width:46rem;margin:1.5rem auto 0;text-align:center;}
+.mj-editorial p{margin:0 0 .5rem;color:var(--mj-ink);}
+
+/* ---------- Service split ---------- */
+.mj-service{background:var(--mj-cream)!important;}
+.mj-service-text{padding:5rem 4rem;max-width:44rem;}
+.mj-service-img{height:100%;min-height:520px;}
+.mj-service-img img{width:100%;height:100%;min-height:520px;object-fit:cover;display:block;}
+@media (min-width:992px){ .mj-service .row{min-height:760px;} .mj-service-img,.mj-service-img img{position:absolute;inset:0;min-height:0;} .mj-service .col-lg-6.p-0{align-self:stretch;position:relative;} }
+@media (max-width:991px){ .mj-service-text{padding:4rem 1.5rem;} .mj-service-img,.mj-service-img img{min-height:0;height:auto;} }
+
+/* ---------- Gallery ---------- */
+.mj-gallery{background:var(--mj-paper);padding-bottom:4rem;}
+.mj-gallery .cbp{margin:0 8px;}
+.mj-gallery .cbp-caption-defaultWrap img{width:100%;height:auto;display:block;}
+.mj-disclosure{max-width:46rem;margin:2rem auto 0;text-align:center;font-size:15px;color:var(--mj-muted);}
+
+/* ---------- Contact ---------- */
+#contact{background:var(--mj-cream);}
+.contact-form .form-control{background:transparent;color:var(--mj-ink);font-size:16px;border-bottom:1px solid #8C8288;}
+.contact-form .form-control::placeholder{color:#6A5F64;opacity:1;}   /* 5.4 on cream */
+.contact-form .form-control:focus{border-bottom-color:var(--mj-acc-ink);}
+button.mj-btn{cursor:pointer;}
+.address-item{background:#fff;padding:1.8rem;}
+.address-item li{float:none;width:100%;}
+.address-item i{color:var(--mj-acc-ink);font-size:30px;}
+.mj-addr-head{font-family:var(--mj-sans);font-weight:700;font-size:15px;letter-spacing:.4px;color:var(--mj-acc-ink);margin:0 0 .2rem;}
+.address-item p{margin:0;color:var(--mj-ink);font-size:16px;}
+/* Demo map block: theme author's Maps key and a 650px grey box. Now a photograph. */
+.map-half.mj-contact-img{height:auto;background:none;margin-top:0;}
+.mj-contact-img img{width:100%;height:auto;display:block;}
+@media (max-width:991px){ .map-half.mj-contact-img{margin-top:3rem;} }
+
+/* ---------- Footer ---------- */
+.footer-style-1.mj-footer{background:var(--mj-dark);padding:2.6rem 0;}
+.mj-foot-name{font-family:var(--mj-serif);font-size:1.15rem;color:var(--mj-on-dark);margin:0 0 .4rem;}
+.mj-footer .company-about{color:var(--mj-on-dark);margin:0;font-size:15px;}
+
+/* ---------- Fixes after the first render check ---------- */
+.btn{text-transform:none;}                         /* demo capitalised every word */
+.feature-item{padding:22px 18px;}
+#contact .heading-area{margin-bottom:1.8rem;}
+@media (max-width:991px){
+  /* demo centres all headings on small screens; the kicker rule and lists read better left aligned */
+  .heading-area:not(.text-center),.heading-box,.feature-item,.address-item,.mj-editorial{text-align:left!important;}
+  .mj-editorial{margin-left:0;}
+  .mj-portrait{max-width:none;margin-right:22px;}
+}
+@media (min-width:992px) and (max-width:1299px){
+  /* At laptop widths the cover crop brings her face toward the centre; keep the headline narrow */
+  .mj-hero-name{font-size:3.2rem;}
+  .home-banner.mj-hero{background-image:linear-gradient(90deg,rgba(247,243,238,.95) 0%,rgba(247,243,238,.9) 40%,rgba(247,243,238,0) 52%),url("../img/hero.jpg");}
+}
